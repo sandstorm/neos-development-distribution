@@ -19,7 +19,8 @@
       "flowpack/*": "source"
     },
     "allow-plugins": {
-      "neos/composer-plugin": true
+      "neos/composer-plugin": true,
+      "cweagans/composer-patches": true
     }
   },
   "minimum-stability": "dev",
@@ -37,7 +38,8 @@
     "neos/twitter-bootstrap": "@dev",
     "neos/form": "@dev",
     "neos/neos-setup": "^4.0.x-dev",
-    "neos/setup": "@dev"
+    "neos/setup": "@dev",
+    "cweagans/composer-patches": "1.7.3"
   },
   "repositories": {
     "distributionPackages": {
@@ -66,5 +68,12 @@
     "phpunit/phpunit": "^9.6.11",
     "phpstan/phpstan": "^1.10.0",
     "squizlabs/php_codesniffer": "^3.6"
+  },
+  "extra": {
+    "patches": {
+      "neos/behat": {
+        "Make flow sub-context configurable": "./patches/neos-behat__flow-context-configurable.patch"
+      }
+    }
   }
 }
