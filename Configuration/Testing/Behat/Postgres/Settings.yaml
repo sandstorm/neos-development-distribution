@@ -1,0 +1,17 @@
+Neos:
+  Flow:
+    persistence:
+      # For a reference of the possible options, take a look at
+      # https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
+      backendOptions:
+
+        # for postgres tests
+        driver: 'pdo_pgsql'
+        charset: 'utf8'
+        defaultTableOptions:
+          charset: 'utf8'
+        host: '%env:POSTGRES_DB_NEOS_HOST%'
+        port: '%env:POSTGRES_DB_NEOS_PORT%'
+        password: '%env:POSTGRES_DB_NEOS_PASSWORD%'
+        user: '%env:POSTGRES_DB_NEOS_USER%'
+        dbname: '%env:POSTGRES_DB_NEOS_DATABASE%'

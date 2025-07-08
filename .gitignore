@@ -26,6 +26,8 @@
 !/Configuration/Development
 /Configuration/Development/*
 !/Configuration/Development/Docker
+!/Configuration/Testing
 
 # cache
 /tmp/
+/container-logs/
