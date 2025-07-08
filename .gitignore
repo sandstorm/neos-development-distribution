@@ -1,3 +1,5 @@
+.DS_Store
+
 /Build/Behat/*
 /Build/PhpCodesniffer/*
 /Build/BuildEssentials
@@ -31,3 +33,4 @@
 # cache
 /tmp/
 /container-logs/
+
