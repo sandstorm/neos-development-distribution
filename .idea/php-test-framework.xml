@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpTestFrameworkSettings">
+    <test_tools>
+      <tool tool_name="Behat">
+        <settings>
+          <configurations>
+            <local_configuration executable_path="$PROJECT_DIR$/Packages/Libraries/behat/behat/bin/behat" />
+            <configuration_by_sdk interpreter_id="c7e140a4-3759-4e34-87a1-40b488d260de" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.yml.dist" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
+            <configuration_by_sdk interpreter_id="1b88abb1-96c7-4762-ae49-86cfb9408b83" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.yml.dist" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
+          </configurations>
+        </settings>
+      </tool>
+    </test_tools>
+  </component>
+  <component name="PhpTestFrameworkVersionCache">
+    <tools_cache>
+      <tool tool_name="Behat">
+        <cache>
+          <versions>
+            <info id="Local/Packages/Libraries/behat/behat/bin/behat" version="Behat version can't be detected. Default PHP interpreter is not local" />
+            <info id="interpreter-1b88abb1-96c7-4762-ae49-86cfb9408b83/app/Packages/Libraries/behat/behat/bin/behat" version="3.22.0.0" />
+            <info id="interpreter-c7e140a4-3759-4e34-87a1-40b488d260de/app/Packages/Libraries/behat/behat/bin/behat" version="3.22.0.0" />
+          </versions>
+        </cache>
+      </tool>
+      <tool tool_name="PHPUnit">
+        <cache>
+          <versions>
+            <info id="Local/Packages/Libraries/autoload.php" version="PHPUnit version can't be detected. Default PHP interpreter is not local" />
+          </versions>
+        </cache>
+      </tool>
+    </tools_cache>
+  </component>
+</project>
