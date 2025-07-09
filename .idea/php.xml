@@ -101,6 +101,7 @@
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/property-access" />
+      <path value="$PROJECT_DIR$/Packages/Libraries/cweagans/composer-patches" />
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/property-info" />
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/Packages/Libraries/symfony/polyfill-intl-normalizer" />
@@ -139,7 +140,6 @@
       <path value="$PROJECT_DIR$/Packages/Libraries/neos/eventstore-doctrineadapter" />
       <path value="$PROJECT_DIR$/Packages/Libraries/neos/eventstore" />
       <path value="$PROJECT_DIR$/Packages/Libraries/neos/composer-plugin" />
-      <path value="$PROJECT_DIR$/Packages/Libraries/cweagans/composer-patches" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
