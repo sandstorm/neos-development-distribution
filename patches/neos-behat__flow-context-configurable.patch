@@ -1,0 +1,24 @@
+Index: Packages/Application/Neos.Behat/Classes/FlowBootstrapTrait.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Packages/Application/Neos.Behat/Classes/FlowBootstrapTrait.php b/Packages/Application/Neos.Behat/Classes/FlowBootstrapTrait.php
+--- a/Packages/Application/Neos.Behat/Classes/FlowBootstrapTrait.php	
++++ b/Packages/Application/Neos.Behat/Classes/FlowBootstrapTrait.php	(date 1751991670994)
+@@ -54,8 +54,14 @@
+             define('BEHAT_ERROR_REPORTING', E_ALL);
+         }
+ 
++        $flowContextForBehat = 'Testing/Behat';
++        $subContext = getenv('BEHAT_SUB_CONTEXT');
++        if (is_string($subContext) && strlen($subContext) > 0) {
++            $flowContextForBehat .= "/$subContext";
++        }
++
+         // Boot flow with an active request handler
+-        $flowBootstrap = new Bootstrap('Testing/Behat');
++        $flowBootstrap = new Bootstrap($flowContextForBehat);
+         $requestHandler = new RuntimeSequenceHttpRequestHandler($flowBootstrap);
+ 
+         $flowBootstrap->registerRequestHandler($requestHandler);

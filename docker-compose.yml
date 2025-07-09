@@ -1,4 +1,29 @@
-version: '3.8'
+### Local Development Setup
+#
+# Build info: see ./docker directory
+#
+# currently, you have to comment out the FLOW_CONTEXT env. variable to switch to postgres
+#
+# TODO setup and documentation for running neos with postgres
+#
+#
+# Services:
+#
+# 'neos'
+#   - web: http://localhost:8081/neos (login = admin:password)
+#   - FLOW_CONTEXT = Development/Docker
+#
+# 'db'
+#   - MariaDB database (default for the ContentRepository)
+#   - exposed port 13306
+#   - DB name: neos
+#   - credentials: neos:neos
+#
+# 'dbpgsql'
+#   - PostgreSQL database -> set via FLOW_CONTEXT = Development/Docker/Postgres
+#   - exposed port 15432
+#   - DB name: neos
+#   - credentials: neos:neos
 
 services:
   neos:
@@ -25,12 +50,57 @@ services:
       - ./DistributionPackages:/app/DistributionPackages:cached
       - ./Packages:/app/Packages:cached
       - ./Configuration:/app/Configuration:cached
+      - ./patches:/app/patches:ro,cached
+      # Logs
+      - ./container-logs/neos-mariadb:/app/Data/Logs/:cached
     ports:
       - '8081:8081'
     networks:
       - neosdevelopment
     depends_on:
       - db
+
+  # This container waits for 'neos' to be up and running before setting up itself in the entrypoint.
+  # see: WAIT_FOR env var
+  neos-postgres:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    environment:
+      FLOW_CONTEXT: 'Development/Docker/Postgres'
+      # see patch for Neos.Behat
+      # the behat tests get then executed under FLOW_CONTEXT = Testing/Behat/Postgres
+      BEHAT_SUB_CONTEXT: 'Postgres'
+      COMPOSER_CACHE_DIR: '/composer_cache'
+      # DB connection
+      POSTGRES_DB_NEOS_HOST: 'dbpgsql'
+      POSTGRES_DB_NEOS_PORT: 5432
+      POSTGRES_DB_NEOS_PASSWORD: 'neos'
+      POSTGRES_DB_NEOS_USER: 'neos'
+      POSTGRES_DB_NEOS_DATABASE: 'neos'
+      # Neos
+      ADMIN_USERNAME: 'admin'
+      ADMIN_PASSWORD: 'password'
+      # we wait in the entrypoint script via curl sleep loop
+      # (we call the login page, since the wait loop checks for 200 status code)
+      WAIT_FOR: 'http://neos:8081/neos/login'
+    volumes:
+      - ./composer.json:/app/composer.json:cached
+      # Explicitly set up Composer cache for faster fetching of packages
+      - ./tmp/composer_cache:/composer_cache:cached
+      # Code
+      - ./DistributionPackages:/app/DistributionPackages:cached
+      - ./Packages:/app/Packages:cached
+      - ./Configuration:/app/Configuration:cached
+      - ./patches:/app/patches:cached
+      # Logs
+      - ./container-logs/neos-postgres:/app/Data/Logs/:cached
+    ports:
+      - '8082:8081'
+    networks:
+      - neosdevelopment
+    depends_on:
+      - dbpgsql
 
   db:
     image: mariadb:10.11
@@ -45,8 +115,23 @@ services:
       - '13306:3306'
     networks:
       - neosdevelopment
+
+  dbpgsql:
+    image: postgres:17
+    environment:
+      POSTGRES_PASSWORD: neos
+      POSTGRES_DB: neos
+      POSTGRES_USER: neos
+    ports:
+      - '15432:5432'
+    volumes:
+      - dbpgsql:/var/lib/postgresql/data
+    networks:
+      - neosdevelopment
+
 volumes:
   db:
+  dbpgsql:
 
 networks:
   neosdevelopment:

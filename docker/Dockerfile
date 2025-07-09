@@ -3,10 +3,11 @@ FROM php:8.3-cli
 RUN apt-get update \
     # install GraphicsMagick
 	&& apt-get install -y \
-		libgraphicsmagick1-dev graphicsmagick zlib1g-dev libicu-dev gcc g++ --no-install-recommends \
+		libgraphicsmagick1-dev graphicsmagick zlib1g-dev libicu-dev libpq-dev gcc g++ --no-install-recommends \
 	&& pecl -vvv install gmagick-beta && docker-php-ext-enable gmagick \
     # pdo_mysql
     && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install pdo_pgsql \
     # redis
     && pecl install redis && docker-php-ext-enable redis \
 	# intl
@@ -25,7 +26,8 @@ ADD /docker/config-files/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-l
 ADD /docker/config-files/upload-limit-php.ini /usr/local/etc/php/conf.d/upload-limit-php.ini
 
 RUN mkdir -p /app/DistributionPackages
-RUN mkdir -p /app/Configuration/Development
+RUN mkdir -p /app/Configuration/Development/Postgres
+RUN mkdir -p /app/Data/Logs/Exceptions
 RUN mkdir -p /.composer
 
 RUN chown -R 1000:1000 entrypoint.sh /app /.composer
