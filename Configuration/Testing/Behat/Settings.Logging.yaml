@@ -1,0 +1,8 @@
+Neos:
+  Flow:
+    log:
+      psr3:
+        'Neos\Flow\Log\PsrLoggerFactory':
+          contentRepositoryLogger:
+            default:
+              class: Neos\Flow\Log\Backend\ConsoleBackend
