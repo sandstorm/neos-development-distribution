@@ -39,7 +39,8 @@
     "neos/form": "@dev",
     "neos/neos-setup": "^4.0.x-dev",
     "neos/setup": "@dev",
-    "cweagans/composer-patches": "1.7.3"
+    "cweagans/composer-patches": "1.7.3",
+    "opensoft/doctrine-postgres-types": "^1.2"
   },
   "repositories": {
     "distributionPackages": {
