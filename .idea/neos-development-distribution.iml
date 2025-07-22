@@ -42,9 +42,6 @@
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/masterminds/html5" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/mikey179/vfsstream" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/myclabs/deep-copy" />
-      <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/neos/composer-plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/neos/eventstore" />
-      <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/neos/eventstore-doctrineadapter" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/phar-io/version" />
@@ -120,6 +117,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/typo3fluid/fluid" />
       <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/Packages/Libraries/opensoft/doctrine-postgres-types" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -140,6 +140,7 @@
       <path value="$PROJECT_DIR$/Packages/Libraries/behat/behat" />
       <path value="$PROJECT_DIR$/Packages/Libraries/composer" />
       <path value="$PROJECT_DIR$/Packages/Libraries/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/Packages/Libraries/opensoft/doctrine-postgres-types" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
