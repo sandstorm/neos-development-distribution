@@ -104,6 +104,32 @@ If you want to run a whole directory of feature files, right-click the directory
 
 ![tests-in-intellij.13_run-directory.png](tests-in-intellij.13_run-directory.png)
 
+# get more logs in the test output
+
+By default, I got very little log output when tests failed.
+
+## set the behat verbose option run-configuration template
+
+In the run-configuration templates, open "Behat".
+Then enter `-vv` in the **Test runner options** text field.
+
+## set psr Logger handlers to ConsoleBackend
+
+Create a `Settings.Logging.yaml` file in the Configuration/Testing/Behat directory.
+
+```yaml
+Neos:
+  Flow:
+    log:
+      psr3:
+        'Neos\Flow\Log\PsrLoggerFactory':
+          contentRepositoryLogger:
+            default:
+              class: Neos\Flow\Log\Backend\ConsoleBackend
+```
+
+# run tests via CLI
+
 btw: Run all behat tests via command inside the docker container via:
 
 ```

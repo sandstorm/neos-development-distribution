@@ -14,16 +14,21 @@ RUN apt-get update \
 	&& docker-php-ext-configure intl && docker-php-ext-install intl \
     # tools
     && apt-get install -y unzip git vim default-mysql-client \
+    # xdebug \
+    && pecl install xdebug && docker-php-ext-enable xdebug \
     # cleanup
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 ADD /docker/entrypoint.sh /
 
+ADD /docker/config-files/error-reporting.ini /usr/local/etc/php/conf.d/error-reporting.ini
 ADD /docker/config-files/memory-limit-php.ini /usr/local/etc/php/conf.d/memory-limit-php.ini
 ADD /docker/config-files/upload-limit-php.ini /usr/local/etc/php/conf.d/upload-limit-php.ini
+ADD /docker/config-files/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN mkdir -p /app/DistributionPackages
 RUN mkdir -p /app/Configuration/Development/Postgres
