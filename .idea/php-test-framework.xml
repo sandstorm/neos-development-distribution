@@ -6,8 +6,8 @@
         <settings>
           <configurations>
             <local_configuration executable_path="$PROJECT_DIR$/Packages/Libraries/behat/behat/bin/behat" />
-            <configuration_by_sdk interpreter_id="c7e140a4-3759-4e34-87a1-40b488d260de" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.yml.dist" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
-            <configuration_by_sdk interpreter_id="1b88abb1-96c7-4762-ae49-86cfb9408b83" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.yml.dist" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
+            <configuration_by_sdk interpreter_id="1b88abb1-96c7-4762-ae49-86cfb9408b83" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.local-dev.yml" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
+            <configuration_by_sdk interpreter_id="c7e140a4-3759-4e34-87a1-40b488d260de" configuration_file_path="/app/Packages/Neos/Neos.ContentRepository.BehavioralTests/Tests/Behavior/behat.local-dev.yml" executable_path="/app/Packages/Libraries/behat/behat/bin/behat" use_configuration_file="true" />
           </configurations>
         </settings>
       </tool>
