@@ -2,6 +2,23 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Build/BuildEssentials" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Behat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Form" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Fusion.Form" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Imagine" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Neos.Setup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Neos.Ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Neos.Ui.Compiled" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Party" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Seo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Setup" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Application/Neos.Twitter.Bootstrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Framework" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Libraries/neos/composer-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Libraries/neos/eventstore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Libraries/neos/eventstore-doctrineadapter" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Packages/Neos" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Packages/Sites/Neos.Demo" vcs="Git" />
   </component>
 </project>
